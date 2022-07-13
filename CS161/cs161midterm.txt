@@ -1,0 +1,95 @@
+if (category == 'F') // Faculty
+
+{
+
+    cout << (pages > 30 ? (0.05 * pages) : 0) << endl; // Any pages less than 30 = no charge
+
+} else if (category == 'S') { // Student
+
+    if (pages >= 30) // 30 or more
+
+        cout << (0.05 * pages) << endl;
+
+    else if (pages >= 10) // Less than 30, but still at least 10
+
+        cout << (0.5 + (0.06 * pages)) << endl;
+
+    else // Less than 10
+
+        cout << (0.1 * pages) << endl;
+
+}
+
+// A default catch-all category could go here, like printing rates for guests
+
+// Done
+
+return 0;
+
+
+
+
+
+
+
+for (int i = 1; i <= numPowers; i++)
+{
+    // I believe pow() does not handle complex numbers,
+    // I'd like to either check that the input numbers are valid (no negative bases), 
+    // or otherwise try to add handling for complex numbers, but let's keep it simple instead:
+
+    cout << pow(number, i) << endl;
+}
+
+return 0;
+
+
+
+
+
+
+    // Variables
+    int numRolls = 0; // Total dice rolls 
+    int numPairs = 0; // How many rolls matched 
+    int firstResult = 0; // Die #1
+    int secondResult = 0; // Die #2
+
+    while (numPairs < 10)
+    {
+        numRolls++;
+
+    // Roll dice
+        firstResult = rand() % 6 + 1;
+        secondResult = rand() % 6 + 1;
+
+    // Output this roll
+    cout << "Rolled a " << firstResult << " and a " << secondResult << ". ";
+
+    // Check for pairs
+        if (firstResult == secondResult)
+        {
+            numPairs++;
+            cout << "It's a pair!";
+        }
+
+    cout << endl;
+
+    }
+
+// Done
+    cout << "Took " << numRolls << " rolls." << endl;
+    return 0;
+
+
+
+
+
+// Locate delimiter indices
+const char delimCharacter = '_';
+    int usernameUnderscoreLocation = input.find(delimCharacter); // Position where name starts
+    int yearUnderscoreLocation = input.find(delimCharacter,usernameUnderscoreLocation+1); // Position where name stops and year starts
+    int charsInName = (yearUnderscoreLocation - (usernameUnderscoreLocation + 1)); // Length of name substring
+    // Year is always 4 chars long
+
+// Output substrings based on delimiter positions
+cout << input.substr(usernameUnderscoreLocation+1,charsInName) << endl << input.substr(yearUnderscoreLocation+1,4) << endl;
